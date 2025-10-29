@@ -15,6 +15,9 @@
 
         body {
             background: url('https://tse2.mm.bing.net/th/id/OIP.YhRadFLzKwFlynUyfi7zfAHaEo?rs=1&pid=ImgDetMain&o=7&rm=3');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
@@ -48,8 +51,23 @@
             margin-bottom: 30px;
             text-transform: capitalize;
             font-weight: 500;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bolder;
+            line-height: 1.4;
+        }
+
+        .tagline ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            padding-left: 20px;
+        }
+
+        .tagline li {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
 
         .coin-name {
@@ -58,7 +76,7 @@
             margin: 20px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            background: linear-gradient(45deg,red, blue);
+            background: linear-gradient(45deg, red, blue);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -197,6 +215,10 @@
             background: linear-gradient(45deg, #8a2be2, #6a0dad);
         }
 
+        .raydium {
+            background: linear-gradient(45deg, #6C41F2, #4A2BB5);
+        }
+
         .social-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px blue;
@@ -300,133 +322,214 @@
             box-shadow: 0 10px 20px black;
         }
 
-        nav{
+        nav {
             width: 100%;
             padding: 10px;
             background-color: #000;
             backdrop-filter: blur(2000px);
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
-        .coin-name2{
+        .coin-name2 {
             font-size: 1.7rem;
             font-weight: 900;
             text-transform: uppercase;
-            background-color: white;
+            background: linear-gradient(45deg, white, silver);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-style: italic;
             font-weight: bolder;
-            margin-top: 10px;
         }
 
-        .rad{
-            float: right;
+        .rad {
             display: flex;
             align-items: center;
-            padding: 6px;
-            
+            padding: 10px 20px;
             border-radius: 9px;
             text-decoration: none;
             color: rgb(12, 12, 39);
             font-weight: bold;
             transition: all 0.3s ease;
-            min-width: 80px;
             justify-content: center;
             box-shadow: 0 5px 5px darkgray;
-            top: 0;
-            right: 0;
             background-color: white;
-            margin-top: 10px;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .rad:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.4);
         }
 
         @media (max-width: 768px) {
             .coin-name {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .logo {
                 font-size: 2.5rem;
             }
             
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .tagline li {
+                font-size: 1.2rem;
+            }
+            
             .social-btn {
-                min-width: 120px;
+                min-width: 150px;
                 padding: 12px 20px;
+                font-size: 0.9rem;
             }
             
             .chart-container {
                 height: 400px;
             }
-             .tagline{
-                font-size: 1.3rem;
-                li{font-size: 0.5rem;}
+            
+            .coin-name2 {
+                font-size: 1.4rem;
+            }
+            
+            .rad {
+                padding: 8px 16px;
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
             .coin-name {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .logo {
                 font-size: 2rem;
             }
             
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .tagline li {
+                font-size: 1rem;
+            }
+            
             .social-links {
                 flex-direction: column;
+                align-items: center;
             }
             
             .social-btn {
                 width: 100%;
-                max-width: 120px;
+                max-width: 250px;
+                padding: 12px 20px;
             }
             
             .chart-container {
                 height: 300px;
             }
-            .tagline{
-                font-size: 1.3rem;
+            
+            .coin-name2 {
+                font-size: 1.2rem;
             }
-              li{font-size: 0.5rem;}
+            
+            .rad {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .contract-address {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .address-text {
+                margin-right: 0;
+                text-align: center;
+                width: 100%;
+            }
         }
 
-        .imgbtn3{
-            background-image: url('https://th.bing.com/th/id/OIP.w62o0DVTcxeLYuLLXqL1QQHaHa?w=208&h=208&c=7&r=0&o=7&cb=12&dpr=1.5&pid=1.7&rm=3');
-            background-size: contain;
-            width: 100px;
-            height: 50px;
-            border: none;
-            cursor: pointer;
-            display: block;
-            background-repeat: no-repeat;
+        .mission-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 217, 15, 0.3);
         }
-        li{
-            font-size: 1.5rem;
-            font-weight: bold;
+
+        .mission-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(45deg, #FED90F, #D13400);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .mission-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(254, 217, 15, 0.2);
+        }
+
+        .mission-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #FED90F;
+        }
+
+        .mission-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #FFF5CC;
+        }
+
+        .mission-item p {
+            color: #FFF5CC;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 <nav>
-<p class="coin-name2">Justice For Naomi</p>
-<button class="social-btn rad">Buy Now</button>
+    <p class="coin-name2">Justice For Naomi</p>
+    <button class="rad">Buy Now</button>
 </nav>
     <div class="container">
         <header>
             <div class="logo">
-                <img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/10/1200/675/anti-greta-activist-001.jpg?ve=1&tl=1" alt="" >
+                <img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/10/1200/675/anti-greta-activist-001.jpg?ve=1&tl=1" alt="Naomi Activist">
             </div>  
-            <p class="tagline">Join the movement for freedom of speech in germany AND Anti-migrant crimes
-                <br>
-                <li>Ensure Naomi's Safety </li>
-                <li>Advocate for the AfD party</li>
-                <li>Promote free speech In Germany</li>
-                <li>Leverage Media and Social influence</li>
-            </p>
+          
+            <div class="tagline">
+                Join the movement for freedom of speech in Germany and against migrant crimes
+                <ul>
+                    <li>Ensure Naomi's Safety</li>
+                    <li>Advocate for the AfD party</li>
+                    <li>Promote free speech in Germany</li>
+                    <li>Leverage Media and Social influence</li>
+                </ul>
+            </div>
         </header>
 
         <section class="contract-section">
@@ -443,6 +546,32 @@
             <h2 class="chart-title">Live Chart</h2>
             <div class="chart-container">
                 <iframe class="chart-iframe" src="https://dexscreener.com/solana/6eqFaBiTDzPZsd8kaB8k9NY5bSJJVAZsJcnSH9cUG6Gx"></iframe>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <h2 class="mission-title">Our Mission</h2>
+            <div class="mission-content">
+                <div class="mission-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Protect Free Speech</h3>
+                    <p>Fighting for the fundamental right to express opinions without fear of persecution in Germany.</p>
+                </div>
+                <div class="mission-item">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Political Advocacy</h3>
+                    <p>Supporting political movements that prioritize national sovereignty and citizen rights.</p>
+                </div>
+                <div class="mission-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Building</h3>
+                    <p>Creating a strong community that stands against oppressive policies and censorship.</p>
+                </div>
+                <div class="mission-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Media Influence</h3>
+                    <p>Using social media and traditional platforms to spread our message worldwide.</p>
+                </div>
             </div>
         </section>
 
@@ -469,12 +598,10 @@
         </section>
 
         <div class="social-links">
-      
             <a href="https://x.com/elonmusk/status/1983560511049576878" class="social-btn twitter" target="_blank">
                 <i class="fab fa-twitter"></i> Twitter
             </a>
-          
-          
+         
         </div>
     </div>
 
@@ -485,7 +612,7 @@
                 <p>Join the movement for freedom of speech in Germany</p>
                 
                 <div class="footer-links">
-                
+               
                 </div>
                 
                 <div class="footer-divider"></div>
@@ -514,7 +641,7 @@
 
         // Add some animation to elements on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.contract-section, .chart-section, .tokenomics, .social-btn');
+            const elements = document.querySelectorAll('.contract-section, .chart-section, .tokenomics, .social-btn, .mission-section');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
