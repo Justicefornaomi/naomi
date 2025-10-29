@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supremee - Memecoin designs by Supremee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, silver, black);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #FED90F, #D13400);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(254, 217, 15, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #FFF5CC;
+            margin-bottom: 30px;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-family:times Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .coin-name {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg,red, blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(254, 217, 15, 0.5);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: bolder;
+        }
+
+        .contract-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 217, 15, 0.3);
+        }
+
+        .contract-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #FFF5CC;
+        }
+
+        .contract-address {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            border: 1px solid rgba(254, 217, 15, 0.2);
+        }
+
+        .address-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 15px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(45deg, silver, white);
+            border: none;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(254, 217, 15, 0.6);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(45deg, #469b4c, #3A7A3E);
+            color: white;
+        }
+
+        .chart-section {
+            margin: 40px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #FFF5CC;
+        }
+
+        .chart-container {
+            height: 500px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .chart-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 50px 0;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-btn i {
+            font-size: 1rem;
+        }
+
+        .dexscreener {
+            background: linear-gradient(45deg, #FED90F, #D13400);
+        }
+
+        .twitter {
+            background: linear-gradient(45deg, #FED90F, #D13400);
+        }
+
+        .telegram {
+            background: linear-gradient(45deg, #FED90F, #D13400);
+        }
+
+        .pumpfun {
+            background: linear-gradient(45deg, #FED90F, #D13400);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(254, 217, 15, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #FFF5CC;
+            font-size: 1.2rem;
+            border-top: 1px solid rgba(254, 217, 15, 0.3);
+            margin-top: 30px;
+            
+        }
+
+        .tokenomics {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 217, 15, 0.3);
+        }
+
+        .tokenomics-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(45deg, #FED90F, #D13400);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tokenomics-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(254, 217, 15, 0.2);
+        }
+
+        .tokenomics-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #FED90F;
+        }
+
+        .tokenomics-label {
+            color: #FFF5CC;
+            font-size: 0.9rem;
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 500px;
+            max-height: 300px;
+            height: auto;
+            border-radius: 10px;
+           
+            box-shadow: 0 10px 20px black;
+         
+        }
+
+        @keyframes play {
+            0% { border-color: #FED90F; }
+            25% { border-color: #D13400; }
+            50% { border-color: #469b4c; }
+            75% { border-color: #71C5E8; }
+            100% { border-color: #FED90F; }
+        }nav{
+            width: 100%;
+            padding: 10px;
+            backdrop-filter: blur(2000px);
+            display: flex;
+            justify-content: space-between;
+        }
+.coin-name2{
+            font-size: 1.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, black, blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(254, 217, 15, 0.5);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: bolder;
+            margin-top: 10px;
+}
+
+        @media (max-width: 768px) {
+            .coin-name {
+                font-size: 2.5rem;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .social-btn {
+                min-width: 150px;
+                padding: 12px 20px;
+            }
+            
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .rad{
+            float: right;
+              display: flex;
+            align-items: center;
+          padding: 6px;
+             border: none;
+            border-radius: 9px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            top: 0;
+            right: 0;
+            background-color: blue;
+            margin-top: 10px;
+        }
+ 
+        @media (max-width: 480px) {
+            .coin-name {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+             
+            }
+            
+            .social-btn {
+                width: 100%;
+                max-width: 20px;
+                height: 130%;
+            
+            }
+            
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        .imgbtn{
+            background-image: url("data:image/webp;base64,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");
+            background-size: contain;
+            width: 100px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            background-repeat: no-repeat;
+        }
+        .imgbtn2{
+            background-image: url('data:image/webp;base64,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');
+ background-size: contain;
+            width: 100px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            background-repeat: no-repeat;
+        }
+        .imgbtn3{
+            background-image: url('https://th.bing.com/th/id/OIP.w62o0DVTcxeLYuLLXqL1QQHaHa?w=208&h=208&c=7&r=0&o=7&cb=12&dpr=1.5&pid=1.7&rm=3');
+ background-size: contain;
+            width: 100px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<nav>
+<p class="coin-name2">Justice For Naomi</p>
+<button class="social-btn rad">Buy Now</button>
+</nav>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/10/1200/675/naomi-seibt-activist.jpg?ve=1&tl=1" alt="" >
+            </div>  <p class="tagline">Join the movement for freedom of speech in germany AND Anti-migrant crimes
+                <br>
+                 
+                </li>
+                <li>Ensure Naomi's Safety </li>
+                <li>Advocate for the AfD party</li>
+                <li>Promote free speech In Germany</li>
+                <li>Leverage Media and Social influence</li>
+                
+            </p>
+        </header>
+
+        <section class="contract-section">
+            <h2 class="contract-title">Contract Address</h2>
+            <div class="contract-address">
+                <span class="address-text" id="contractAddress">4npiGBkcg5scfwiMGLoqt2FvsfQPSVzUN3rwYS1U6w5o</span>
+                <button class="copy-btn" id="copyButton">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">Live Chart</h2>
+            <div class="chart-container">
+                <iframe class="chart-iframe" src="https://dexscreener.com/solana/6eqFaBiTDzPZsd8kaB8k9NY5bSJJVAZsJcnSH9cUG6Gx"></iframe>
+            </div>
+        </section>
+
+        <section class="tokenomics">
+            <h2 class="tokenomics-title">Tokenomics</h2>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-item">
+                    <div class="tokenomics-value">1B</div>
+                    <div class="tokenomics-label">Total Supply</div>
+                </div>
+                <div class="tokenomics-item">
+                    <div class="tokenomics-value">5%</div>
+                    <div class="tokenomics-label">Buy Tax</div>
+                </div>
+                <div class="tokenomics-item">
+                    <div class="tokenomics-value">5%</div>
+                    <div class="tokenomics-label">Sell Tax</div>
+                </div>
+                <div class="tokenomics-item">
+                    <div class="tokenomics-value">100%</div>
+                    <div class="tokenomics-label">Liquidity Locked</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="social-links">
+            <a href="https://dexscreener.com" class="imgbtn" target="_blank">
+               
+            </a>
+            <a href="https://twitter.com" class="imgbtn2" target="_blank">
+              
+          
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 $NAOMI. </p>
+            <p style="margin-top: 10px;">Always <strong>DYOR</strong> and invest responsibly.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address functionality
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const contractAddress = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const btn = document.getElementById('copyButton');
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+
+        // Add some animation to elements on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.contract-section, .chart-section, .tokenomics, .social-btn');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
